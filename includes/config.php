@@ -1,6 +1,6 @@
 <?php
 
-define ( 'DB_HOST', 'localhost' );
-define ( 'DB_USER', 'zhilya0s_todo' );
-define ( 'DB_PASSWORD', '1@p#83S*' );
-define ( 'DB_NAME', 'zhilya0s_todo' );
+define ( 'DB_HOST', 'eu-cdbr-west-01.cleardb.com' );
+define ( 'DB_USER', 'zbf5a0ae685c06a' );
+define ( 'DB_PASSWORD', 'b36037ec' );
+define ( 'DB_NAME', 'heroku_0ba6140862f5f76' );
