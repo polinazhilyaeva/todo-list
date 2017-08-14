@@ -1,0 +1,28 @@
+.section{
+    padding: 70px 0;
+}
+.section-navbars{
+    padding-bottom: 0;
+}
+
+.section-full-screen{
+    height: 100vh;
+}
+
+.section,
+.section-image{
+    background-position: center center;
+    background-size: cover;
+}
+
+[class*="features-"],
+[class*="team-"],
+[class*="projects-"],
+[class*="pricing-"],
+[class*="testimonials-"],
+[class*="contactus-"]{
+    padding: 80px 0;
+}
+
+@import 'sections/_headers';
+@import 'sections/_footers';

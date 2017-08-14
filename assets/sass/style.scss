@@ -1,0 +1,38 @@
+@import 'material-kit/variables';
+@import 'material-kit/mixins';
+@import 'material-kit/shadows';
+@import 'material-kit/misc';
+
+// core sass
+@import 'material-kit/form';
+@import 'material-kit/buttons';
+@import 'material-kit/checkboxes';
+@import 'material-kit/radios';
+@import 'material-kit/inputs';
+@import 'material-kit/labels';
+
+@import 'material-kit/navbar';
+@import 'material-kit/dropdown';
+@import 'material-kit/alerts';
+@import 'material-kit/typography';
+@import 'material-kit/tabs';
+@import 'material-kit/popups';
+@import 'material-kit/cards';
+@import 'material-kit/dialogs';
+@import 'material-kit/panels';
+@import 'material-kit/dividers';
+
+@import 'material-kit/info-areas';
+@import 'material-kit/tables';
+@import 'material-kit/select';
+
+@import 'material-kit/sections';
+
+@import 'material-kit/plugins/plugin-datepicker';
+
+@import 'material-kit/ripples';
+@import 'material-kit/example-pages';
+
+@import 'material-kit/responsive';
+
+@import 'custom';

@@ -1,0 +1,58 @@
+@import 'material-kit/colors';
+
+.checked p {
+    text-decoration: line-through;
+}
+
+.shopping-nav {
+    margin-left: 1em; 
+    margin-top: .3em;
+}
+
+.color-green {
+    color: $green !important;
+}
+
+.color-red {
+    color: $red !important;
+}
+
+.task .form-group {
+    margin-top: 0;
+}
+
+.task .edit-task,
+.task .delete-task {
+    opacity: 0;
+    transition: opacity 200ms ease-in-out;
+    -webkit-transition: opacity 200ms ease-in-out;
+}
+
+.task:hover .edit-task,
+.task:hover .delete-task {
+    opacity: 1;
+}
+
+.project-container .edit-project,
+.project-container .delete-project {
+    opacity: 0;
+    transition: opacity 200ms ease-in-out;
+    -webkit-transition: opacity 200ms ease-in-out;
+}
+
+.project-container nav:hover .edit-project,
+.project-container nav:hover .delete-project {
+    opacity: 1;
+}
+
+.editTaskForm .datepicker,
+.datepicker.dropdown-menu.open {
+    z-index: 9999 !important;
+}
+
+.footer-logo {
+    display: inline-block;
+    width: 1em;
+    height: auto;
+    margin-left: .3em;
+}
