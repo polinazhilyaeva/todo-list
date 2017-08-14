@@ -65,7 +65,7 @@ include_once "includes/login_flow.php";
                             <div class="footer text-center">
                                 <input type="submit" name="submit" value="Log In" class="btn btn-primary btn-round">
                                 <hr>
-                                <p class="description">Don't have an account yet? 
+                                <p class="description">Don't have an account? 
                                     <a href="/signup.php" class="btn btn-primary btn-simple">Sign Up</a>
                                 </p>
                             </div>
