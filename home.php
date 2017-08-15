@@ -194,7 +194,6 @@ if(!isLoggedIn()) {
 </body>
     <script src="assets/js/jquery.min.js"></script>
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
-    <script src="assets/js/jquery.ui.touch-punch.min.js"></script>
     <script src="assets/js/bootstrap.min.js"></script>
     <script src="assets/js/material.min.js"></script>
     <script src="assets/js/bootstrap-datepicker.js"></script>
