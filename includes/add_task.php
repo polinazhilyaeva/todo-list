@@ -24,6 +24,6 @@ $task['id'] = insertTask($link, $task);
 
 mysqli_close($link);
 
-echo getTaskHtml($task, true);
+echo getTaskHtml($task);
 
 ?>

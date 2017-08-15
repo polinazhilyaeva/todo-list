@@ -4027,4 +4027,35 @@ footer {
   height: auto;
   margin-left: .3em; }
 
+.edit-project,
+.delete-project {
+  color: white !important; }
+
+.delete-project {
+  padding-left: .75em !important;
+  padding-right: 0 !important; }
+
+.delete-task {
+  padding-left: .75em !important;
+  padding-right: .5em !important; }
+
+.icon-deadline {
+  font-size: 1em !important; }
+
+.task .checkbox {
+  padding-left: 1.25em !important;
+  padding-right: .7em !important; }
+
+.project-container nav .text-right {
+  padding-right: 0 !important; }
+
+@media screen and (max-width: 1024px) {
+  .project-container .edit-project,
+  .project-container .delete-project,
+  .task .edit-task,
+  .task .delete-task {
+    opacity: 1; } }
+span.checkbox-material:nth-child(3) {
+  display: none !important; }
+
 /*# sourceMappingURL=style.css.map */

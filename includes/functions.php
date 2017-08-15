@@ -211,14 +211,7 @@ function updateProject ($link, $project) {
  *Functions for getting tasks and projects markup
  ************************************************/
 
-function getTaskHtml ($task, $extra_span) {
-
-    if ($extra_span) {
-        $check_span = CHECK_SPAN;
-    } else {
-        $check_span = '';
-    }
-
+function getTaskHtml ($task) {
     if ($task['checked']) {
         $checked = 'checked';
     } else {
@@ -238,7 +231,6 @@ function getTaskHtml ($task, $extra_span) {
     $toReplace = [
         "task" => $task['name'],
         "date" => $deadline,
-        "check_span" => $check_span,
         "checked" => $checked,
         "color" => $color,
         "id" => $task['id']
@@ -252,7 +244,7 @@ function getProjectTasksHtml ($tasks) {
 
     if ($tasks) {
         foreach ($tasks as $task) {
-            $html .= getTaskHtml($task, false);
+            $html .= getTaskHtml($task);
         }
     }
 

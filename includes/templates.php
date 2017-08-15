@@ -18,21 +18,22 @@ define('TASK_HTML',
     '<li class="task :checked" id="task-:id">
         <div class="row">
             <div class="col-xs-2 col-sm-1">
-                <span class="checkbox" style="padding-left: 1.25em; padding-right: .7em;">
+                <div class="checkbox">
                     <label>
-                        <input type="checkbox" name="optionsCheckboxes" :checked><span class="checkbox-material">:check_span</span>
+                        <input type="checkbox" name="optionsCheckboxes" :checked>
+                        <span class="checkbox-material"><span class="check"></span></span>
                     </label>
-                </span>
+                </div>
             </div>
             <div class="col-xs-6 col-sm-8">
                 <p class="task-name">:task</p>
-                <p><i class="material-icons icon-deadline :color" style="font-size: 1em;">schedule</i> <span class="task-deadline">:date</span></p>
+                <p><i class="material-icons icon-deadline :color">schedule</i> <span class="task-deadline">:date</span></p>
             </div>
             <div class="col-xs-4 col-sm-3 text-right">
                 <a href="#" class="btn btn-success btn-just-icon btn-simple edit-task" data-toggle="modal" data-target="#editTaskModal">
                     <i class="material-icons">edit</i>
                 </a>
-                <a href="#" class="btn btn-danger btn-just-icon btn-simple delete-task" style="padding-right: .75em;">
+                <a href="#" class="btn btn-danger btn-just-icon btn-simple delete-task">
                     <i class="material-icons">delete</i>
                 </a>
             </div>
@@ -43,22 +44,18 @@ define('PROJECT_HTML',
     '<div class="card project-container" id="project-:id">
         <nav class="navbar navbar-info">
             <div class="container-fluid">
-                <div class="pull-left shopping-nav">
+                <div class="col-xs-8 col-sm-9 pull-left">
                     <h4 class="project-name">:name</h4>
                 </div>
                 <div>
-                    <ul class="nav navbar-nav navbar-right">
-                        <li class="pull-right">
-                            <a href="#" class="delete-project">
-                                <i class="material-icons">delete</i>
-                            </a>
-                        </li>
-                        <li class="pull-right">
-                            <a href="#" class="edit-project" data-toggle="modal" data-target="#editProjectModal">
-                                <i class="material-icons">edit</i>
-                            </a>
-                        </li>
-                    </ul>
+                    <div class="col-xs-4 col-sm-3 text-right">
+                        <a href="#" class="btn btn-just-icon btn-simple edit-project" data-toggle="modal" data-target="#editProjectModal">
+                            <i class="material-icons">edit</i>
+                        </a>
+                        <a href="#" class="btn btn-just-icon btn-simple delete-project">
+                            <i class="material-icons">delete</i>
+                        </a>
+                    </div>
                 </div>
             </div>
         </nav>
