@@ -140,7 +140,6 @@ $(document).ready(function () {
 
                 // render a new task html as a first position in a list
                 taskItem = $(data).prependTo(taskList);
-
                 // just some animation to make it appear smoothly
                 taskItem.hide().fadeIn();
 
@@ -183,6 +182,8 @@ $(document).ready(function () {
 
             // render a new project html as a last one in a list
             projectItem = $(data).appendTo(projectsList);
+            // just some animation to make it appear smoothly
+            projectItem.hide().fadeIn();
 
             // add event listeners and all the functionality for rendered elements
             projectItem.find('.edit-project').click(prepareEditProjectModal);
@@ -190,9 +191,6 @@ $(document).ready(function () {
             projectItem.find('.add-task').submit(addTask);
             projectItem.find('.datepicker').datepicker({ weekStart: 1 });
             $('.sortable').sortable(sortOptions);
-
-            // just some animation to make it appear smoothly
-            projectItem.hide().fadeIn();
         });
 
         return false;
