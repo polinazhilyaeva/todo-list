@@ -37,7 +37,7 @@ include_once "includes/login_flow.php";
 </head>
 
 <body class="login-page">
-    <div class="page-header header-filter" style="background-image: url('assets/img/bg-login.jpg'); background-size: cover; background-position: top center;">
+    <div class="page-header header-filter login">
         <div class="container">
             <div class="row">
                 <div class="col-md-4 col-md-offset-4 col-sm-6 col-sm-offset-3">

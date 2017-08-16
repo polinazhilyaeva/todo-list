@@ -97,3 +97,23 @@
 span.checkbox-material:nth-child(3) {
     display: none !important;
 }
+
+.task-deadline {
+    font-size: .85em;
+}
+
+.page-header.landing {
+    background-image: url('../img/bg.jpg');
+}
+
+.page-header.login {
+    background-image: url('../img/bg-login.jpg'); 
+    background-size: cover; 
+    background-position: top center;
+}
+
+.page-header.signup {
+    background-image: url('../img/bg-login.jpg'); 
+    background-size: cover; 
+    background-position: top center;
+}

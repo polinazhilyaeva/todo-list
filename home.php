@@ -47,7 +47,7 @@ if(!isLoggedIn()) {
 <nav class="navbar navbar-primary">
     <div class="container">
         <div class="navbar-header">
-            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#example-navbar-primary">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-primary">
                 <span class="sr-only">Toggle navigation</span>
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
@@ -56,7 +56,7 @@ if(!isLoggedIn()) {
             <a class="navbar-brand" href="/">My ToDo List</a>
         </div>
 
-        <div class="collapse navbar-collapse" id="example-navbar-primary">
+        <div class="collapse navbar-collapse" id="navbar-primary">
             <ul class="nav navbar-nav navbar-right">
                 <li>
                     <a href="/login.php?logout=1">
@@ -75,6 +75,7 @@ if(!isLoggedIn()) {
             <div class="row">
                 <div class="col-md-8 col-md-offset-2">
                     <div id="projects-list">
+                        <!-- Get all projects and tasks of logged in user from database and render them from the server -->
                         <?php 
                             $link = connectToDb();
                             renderCurrentUserProjects($link); 
@@ -92,11 +93,12 @@ if(!isLoggedIn()) {
     <footer class="footer">
         <div class="container">
             <div class="copyright pull-center">
-                © <script>document.write(new Date().getFullYear())</script> Made by <a class="footer-logo" href="https://www.polinazhilyaeva.com" target="blank"><img src="assets/img/polinazhilyaeva_bw.svg" alt="Polina Zhilyaeva"></a>
+                &copy; 2017 &middot; Made by <a class="footer-logo" href="https://www.polinazhilyaeva.com" target="blank"><img src="assets/img/polinazhilyaeva_bw.svg" alt="Polina Zhilyaeva"></a>
             </div>
         </div>
     </footer>
 </div>
+
 <!-- Modal window for adding a new project -->
 <div class="modal fade" id="newProjectModal" tabindex="-1" role="dialog" aria-hidden="true" style="display: none;">
   <div class="modal-dialog modal-notice">
@@ -116,6 +118,7 @@ if(!isLoggedIn()) {
     </div>
   </div>
 </div>
+
 <!-- Modal window for editing a task -->
 <div class="modal fade" id="editTaskModal" tabindex="-1" role="dialog" aria-hidden="true" style="display: none;">
   <div class="modal-dialog modal-notice">
@@ -158,6 +161,7 @@ if(!isLoggedIn()) {
     </div>
   </div>
 </div>
+
 <!-- Modal window for editing a project -->
 <div class="modal fade" id="editProjectModal" tabindex="-1" role="dialog" aria-hidden="true" style="display: none;">
   <div class="modal-dialog modal-notice">
@@ -192,6 +196,7 @@ if(!isLoggedIn()) {
   </div>
 </div>
 </body>
+    <!-- Libraries and components -->
     <script src="assets/js/jquery.min.js"></script>
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
     <script src="assets/js/bootstrap.min.js"></script>
@@ -199,5 +204,6 @@ if(!isLoggedIn()) {
     <script src="assets/js/bootstrap-datepicker.js"></script>
     <script src="assets/js/material-kit.js"></script>
     
+    <!-- Main application script -->
     <script src="assets/js/app.js"></script>
 </html>

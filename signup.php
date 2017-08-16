@@ -35,13 +35,11 @@ include_once "includes/signup_flow.php";
     <link href="assets/css/bootstrap.min.css" rel="stylesheet" />
     <link href="assets/css/style.css" rel="stylesheet"/>
 </head>
-
 <body class="signup-page">
-    <div class="page-header header-filter" filter-color="teal" style="background-image: url('/assets/img/bg-login.jpg'); background-size: cover; background-position: top center;">
+    <div class="page-header header-filter signup" filter-color="teal">
         <div class="container">
             <div class="row">
                 <div class="col-md-10 col-md-offset-1">
-
                     <div class="card card-signup">
                         <h2 class="card-title text-center">Sign Up</h2>
                         <h4 class="card-title text-center">to get started using ToDo List</h4>
@@ -91,28 +89,50 @@ include_once "includes/signup_flow.php";
                                             <span class="input-group-addon">
                                                 <i class="material-icons">face</i>
                                             </span>
-                                            <input type="text" name="name" class="form-control" placeholder="First Name..." value="<?php if ($_POST) echo $_POST['name']; ?>">
+                                            <input type="text" name="name" class="form-control" placeholder="First Name..." value="
+                                            <?php 
+                                                if ($_POST) {
+                                                    echo $_POST['name'];
+                                                } 
+                                            ?>
+                                            ">
                                         </div>
 
                                         <div class="input-group">
                                             <span class="input-group-addon">
                                                 <i class="material-icons">perm_identity</i>
                                             </span>
-                                            <input type="text" name="lastname" class="form-control" placeholder="Last Name..." value="<?php if ($_POST) echo $_POST['lastname']; ?>">
+                                            <input type="text" name="lastname" class="form-control" placeholder="Last Name..." value="
+                                            <?php 
+                                                if ($_POST) {
+                                                    echo $_POST['lastname']; 
+                                                }
+                                            ?>
+                                            ">
                                         </div>
 
                                         <div class="input-group">
                                             <span class="input-group-addon">
                                                 <i class="material-icons">email</i>
                                             </span>
-                                            <input type="email" name="email" class="form-control" placeholder="Email..." value="<?php if ($_POST) echo $_POST['email']; ?>">
+                                            <input type="email" name="email" class="form-control" placeholder="Email..." value="
+                                            <?php 
+                                                if ($_POST) {
+                                                    echo $_POST['email']; 
+                                                }
+                                            ?>">
                                         </div>
 
                                         <div class="input-group">
                                             <span class="input-group-addon">
                                                 <i class="material-icons">lock_outline</i>
                                             </span>
-                                            <input type="password" name="password"  class="form-control" placeholder="Password..."  value="<?php if ($_POST) echo $_POST['password']; ?>">
+                                            <input type="password" name="password"  class="form-control" placeholder="Password..."  value="
+                                            <?php 
+                                                if ($_POST) {
+                                                    echo $_POST['password']; 
+                                                }
+                                            ?>">
                                         </div>
                                     </div>
                                     <div class="footer text-center">
@@ -124,16 +144,12 @@ include_once "includes/signup_flow.php";
                                     </div>
                                 </form>
                             </div>
-
                         </div>
                     </div>
-
                 </div>
             </div>
         </div>
     </div>
-
-
 </body>
     <script src="/assets/js/jquery.min.js"></script>
     <script src="/assets/js/bootstrap.min.js"></script>
