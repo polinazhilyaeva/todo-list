@@ -249,7 +249,8 @@ function getTaskHtml ($task) {
     }
 
     $toReplace = [
-        "task" => $task['name'],
+        // "task" => $task['name'],
+        "task" => $today,
         "date" => $deadline,
         "checked" => $checked,
         "color" => $color,
