@@ -2,6 +2,8 @@
 
 include_once 'functions.php';
 
+// Set timezone to a local client's zone
+date_default_timezone_set('Europe/Kiev');
 $today = date('Y-m-d');
 
 if (!$_POST['date']) {

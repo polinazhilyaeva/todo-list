@@ -239,6 +239,8 @@ function getTaskHtml ($task) {
     // Date format of js datepicker is 'd/m/Y' but into mysql database it's written as 'Y-m-d'
     $date = DateTime::createFromFormat('Y-m-d', $task['deadline']);
     $deadline = $date->format('d/m/Y');
+    // Set timezone to a local client's zone
+    date_default_timezone_set('Europe/Kiev');
     $today = date('d/m/Y');
 
     // Change color of icon into red if task is overdue and into green if not
