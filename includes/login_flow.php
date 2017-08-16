@@ -25,8 +25,12 @@ if (isset($_GET['logout']) && isLoggedIn()) {
 
         $link = connectToDb();
 
+        $query = "SELECT * FROM users WHERE email = '" . mysqli_real_escape_string($link, $_POST['email']) . "' AND password = '" . md5(md5($_POST['email']) . $_POST['password']) . "'";
+        $result = mysqli_query($link, $query);
+        $row = mysqli_fetch_array($result);
+
         // Check if there is a user with such email and password in a database
-        if (!isUser($link, $user)) {
+        if (!$row) {
             // If something is wrong - show an error message
             $error_message = getNoticeHtml('There isn\'t a user with this email or a password is incorrect', 'danger');
             $error_message .= getNoticeHtml('Try again or <strong><a href="/signup.php">sign up</a></strong> instead', 'warning');
