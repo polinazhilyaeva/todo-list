@@ -150,7 +150,7 @@ $(document).ready(function () {
 
                 // add event listeners to 'delete' and 'edit' buttons
                 taskItem.find('.delete-task').click(deleteTask);
-                taskItem.find('.edit-task').click(editTask);
+                taskItem.find('.edit-task').click(prepareEditTaskModal);
             });
         }
 
@@ -185,7 +185,7 @@ $(document).ready(function () {
             projectItem = $(data).appendTo(projectsList);
 
             // add event listeners and all the functionality for rendered elements
-            projectItem.find('.edit-project').click(editProject);
+            projectItem.find('.edit-project').click(prepareEditProjectModal);
             projectItem.find('.delete-project').click(deleteProject);
             projectItem.find('.add-task').submit(addTask);
             projectItem.find('.datepicker').datepicker({ weekStart: 1 });
