@@ -1,6 +1,6 @@
 <?php
 
-include_once "includes/signup_flow.php";
+include_once 'includes/signup_flow.php';
 
 ?>
 
@@ -89,7 +89,7 @@ include_once "includes/signup_flow.php";
                                             <span class="input-group-addon">
                                                 <i class="material-icons">face</i>
                                             </span>
-                                            <input type="text" name="name" class="form-control" placeholder="First Name..." value="
+                                            <input type="text" name="name" class="form-control" required placeholder="First Name..." value="
                                             <?php 
                                                 if ($_POST) {
                                                     echo $_POST['name'];
@@ -102,7 +102,7 @@ include_once "includes/signup_flow.php";
                                             <span class="input-group-addon">
                                                 <i class="material-icons">perm_identity</i>
                                             </span>
-                                            <input type="text" name="lastname" class="form-control" placeholder="Last Name..." value="
+                                            <input type="text" name="lastname" class="form-control" required placeholder="Last Name..." value="
                                             <?php 
                                                 if ($_POST) {
                                                     echo $_POST['lastname']; 
@@ -115,7 +115,7 @@ include_once "includes/signup_flow.php";
                                             <span class="input-group-addon">
                                                 <i class="material-icons">email</i>
                                             </span>
-                                            <input type="email" name="email" class="form-control" placeholder="Email..." value="
+                                            <input type="email" name="email" class="form-control" required placeholder="Email..." value="
                                             <?php 
                                                 if ($_POST) {
                                                     echo $_POST['email']; 
@@ -127,7 +127,7 @@ include_once "includes/signup_flow.php";
                                             <span class="input-group-addon">
                                                 <i class="material-icons">lock_outline</i>
                                             </span>
-                                            <input type="password" name="password"  class="form-control" placeholder="Password..."  value="
+                                            <input type="password" name="password"  class="form-control" required placeholder="Password..."  value="
                                             <?php 
                                                 if ($_POST) {
                                                     echo $_POST['password']; 

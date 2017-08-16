@@ -1,12 +1,12 @@
 <?php 
 
-include_once "functions.php";
+include_once 'functions.php';
 
 session_start();
 
 $project = [
-    "name" => $_POST['name'],
-    "user_id" => $_SESSION['id']
+    'name' => $_POST['name'],
+    'user_id' => $_SESSION['id']
 ];
 
 $link = connectToDb();

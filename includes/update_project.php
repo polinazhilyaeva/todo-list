@@ -1,10 +1,10 @@
 <?php 
 
-include_once "functions.php";
+include_once 'functions.php';
 
 $project = [
-    "id" => $_POST['id'],
-    "name" => $_POST['name']
+    'id' => $_POST['id'],
+    'name' => $_POST['name']
 ];
 
 $link = connectToDb();

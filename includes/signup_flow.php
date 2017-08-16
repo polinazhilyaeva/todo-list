@@ -1,38 +1,41 @@
 <?php
 
-include_once "functions.php";
+include_once 'functions.php';
 
 session_start();
 
 $error_message = '';
 
+// Check if a sign up form was submitted
 if ($_POST) {
-    $user = [
-        'name' => $_POST['name'],
-        'lastname' => $_POST['lastname'],
-        'email' => $_POST['email'],
-        'password' => $_POST['password']
-    ];
 
+    // Show error messages if there are any
     if (getSignupErrorsHtml()) {
         $error_message .= getSignupErrorsHtml();
     } else {
         $link = connectToDb();
+        
+        // Check if there is already a user with such email in a database
+        if (searchUserByEmail($link, $_POST['email'])) {
+            $error_message = getNoticeHtml('A user with this email already exists. Do you want to <strong><a href="/login.php">log in</a></strong> instead?', 'warning');
 
-        $query = "SELECT * FROM users WHERE email = '" . mysqli_real_escape_string($link, $_POST['email']) . "'";
-        $result = mysqli_query($link, $query);
-        $results_number = mysqli_num_rows($result);
-
-        if ($results_number) {
-            $error_message = getNoticeHtml("A user with this email already exists. Do you want to <strong><a href='/login.php'>log in</a></strong> instead?", 'warning');
+        // If not - add new user to a database, log him in and redirect to an application page
         } else {
-            $_SESSION['id'] = insertUser($link, $user);
-            
-            mysqli_close($link);
+            $user = [
+                'name' => $_POST['name'],
+                'lastname' => $_POST['lastname'],
+                'email' => $_POST['email'],
+                'password' => $_POST['password']
+            ];
 
+            $_SESSION['id'] = insertUser($link, $user);
             header('Location: /home.php');      
         }
+
+        mysqli_close($link);
     }
+
+// If a user is logged in - redirect him straight to an application page
 } elseif (isLoggedIn()) {
     header('Location: /home.php');
 }

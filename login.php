@@ -1,6 +1,6 @@
 <?php
 
-include_once "includes/login_flow.php";
+include_once 'includes/login_flow.php';
 
 ?>
 
@@ -46,20 +46,34 @@ include_once "includes/login_flow.php";
                             <div class="header header-primary text-center">
                                 <h4 class="card-title">Log in</h4>
                             </div>
+                            <!-- Any error messages and notices will be shown here-->
                             <?php echo $error_message; ?>
+                            
                             <div class="content">
                                 <div class="input-group">
                                     <span class="input-group-addon">
                                         <i class="material-icons">email</i>
                                     </span>
-                                    <input type="email" name="email" class="form-control" placeholder="Email..." value="<?php if ($_POST) echo $_POST['email']; ?>">
+                                    <input type="email" name="email" class="form-control" required placeholder="Email..." value="
+                                    <?php 
+                                        if ($_POST) {
+                                            echo $_POST['email']; 
+                                        }
+                                    ?>
+                                    ">
                                 </div>
 
                                 <div class="input-group">
                                     <span class="input-group-addon">
                                         <i class="material-icons">lock_outline</i>
                                     </span>
-                                    <input type="password" name="password" placeholder="Password..." class="form-control" value="<?php if ($_POST) echo $_POST['password']; ?>">
+                                    <input type="password" name="password" required placeholder="Password..." class="form-control" value="
+                                    <?php 
+                                        if ($_POST) {
+                                            echo $_POST['password']; 
+                                        }
+                                    ?>
+                                    ">
                                 </div>
                             </div>
                             <div class="footer text-center">

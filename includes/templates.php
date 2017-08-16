@@ -12,15 +12,13 @@ define('NOTICE_HTML',
         </div>
     </div>');
 
-define('CHECK_SPAN', '<span class="check"></span>');
-
 define('TASK_HTML', 
     '<li class="task :checked" id="task-:id">
         <div class="row">
             <div class="col-xs-2 col-sm-1">
                 <div class="checkbox">
                     <label>
-                        <input type="checkbox" name="optionsCheckboxes" :checked>
+                        <input type="checkbox" name="optionsCheckboxes" class="check-task" :checked>
                         <span class="checkbox-material"><span class="check"></span></span>
                     </label>
                 </div>
@@ -97,4 +95,3 @@ define('PROJECT_HTML',
             </ul>
         </div>
     </div>');
-
