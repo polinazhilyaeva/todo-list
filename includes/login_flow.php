@@ -24,10 +24,8 @@ if (isset($_GET['logout']) && isLoggedIn()) {
         ];
 
         $link = connectToDb();
-
-        $query = "SELECT * FROM users WHERE email = '" . mysqli_real_escape_string($link, $user['email']) . "' AND password = '" . md5(md5($user['email']) . $user['password']) . "'";
-        $result = mysqli_query($link, $query);
-        $row = mysqli_fetch_array($result);
+        
+        $row = isUser($link, $user);
 
         // Check if there is a user with such email and password in a database
         if (!$row) {
