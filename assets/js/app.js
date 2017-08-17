@@ -222,7 +222,6 @@ $(document).ready(function () {
             taskNameEl = taskLi.find('.task-name'),
             deadlineEl = taskLi.find('.task-deadline'),
             deadlineIcon = taskLi.find('.icon-deadline'),
-            today = getTodayFormatted(),
             postData;
 
         $('#editTaskModal').modal('hide');
@@ -242,13 +241,6 @@ $(document).ready(function () {
         // update name and deadline of a task in html view
         taskNameEl.html(newTaskName);
         deadlineEl.html(newDeadline);
-
-        // change color of icon into red if task is overdue and into green if not
-        if (newDeadline >= today) {
-            deadlineIcon.removeClass('color-red').addClass('color-green');
-        } else {
-            deadlineIcon.removeClass('color-green').addClass('color-red');
-        }
 
         return false;   
     }

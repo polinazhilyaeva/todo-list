@@ -25,7 +25,7 @@ define('TASK_HTML',
             </div>
             <div class="col-xs-6 col-sm-8">
                 <p class="task-name">:task</p>
-                <p><i class="material-icons icon-deadline :color">schedule</i> <span class="task-deadline">:date</span></p>
+                <p><i class="material-icons icon-deadline">schedule</i> <span class="task-deadline">:date</span></p>
             </div>
             <div class="col-xs-4 col-sm-3 text-right">
                 <a href="#" class="btn btn-success btn-just-icon btn-simple edit-task" data-toggle="modal" data-target="#editTaskModal">

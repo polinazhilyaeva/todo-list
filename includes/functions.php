@@ -206,6 +206,22 @@ function getProjectTasks ($link, $project_id) {
     return $tasks;
 }
 
+function getUserProjects ($link, $user_id) {
+    $projects = [];
+
+    $query = "SELECT * FROM projects WHERE user_id = " . $user_id;
+
+    mysqli_query($link, $query);
+
+    $result = mysqli_query($link, $query);
+
+    while ($row = mysqli_fetch_array($result)) {
+        $projects[] = $row;
+    }
+
+    return $projects;
+}
+
 function deleteTask ($link, $task_id) {
     $query = "DELETE FROM tasks WHERE id='" . $task_id . "'";
 
@@ -239,22 +255,11 @@ function getTaskHtml ($task) {
     // Date format of js datepicker is 'd/m/Y' but into mysql database it's written as 'Y-m-d'
     $date = DateTime::createFromFormat('Y-m-d', $task['deadline']);
     $deadline = $date->format('d/m/Y');
-    // Set timezone to a local client's zone
-    date_default_timezone_set('Europe/Kiev');
-    $today = date('d/m/Y');
-
-    // Change color of icon into red if task is overdue and into green if not
-    if ($deadline >= $today) {
-        $color = 'color-green';
-    } else {
-        $color = 'color-red';
-    }
 
     $toReplace = [
         "task" => $task['name'],
         "date" => $deadline,
         "checked" => $checked,
-        "color" => $color,
         "id" => $task['id']
     ];
 
@@ -276,7 +281,7 @@ function getProjectTasksHtml ($tasks) {
 function getProjectHtml ($link, $project, $empty) {
     // Set timezone to a local client's zone
     date_default_timezone_set('Europe/Kiev');
-    $date = date('d/m/Y');
+    $today = date('d/m/Y');
 
     // Variable $empty is 'true' when a new project is being added
     if ($empty) {
@@ -289,7 +294,7 @@ function getProjectHtml ($link, $project, $empty) {
     $toReplace = [
         "id" => $project['id'],
         "name" => $project['name'],
-        "date" => $date,
+        "date" => $today,
         "tasks" => $tasksHtml
     ];
 
@@ -299,14 +304,12 @@ function getProjectHtml ($link, $project, $empty) {
 function renderCurrentUserProjects ($link) {
     $html = '';
 
-    $query = "SELECT * FROM projects WHERE user_id = " . $_SESSION['id'];
+    $projects = getUserProjects($link, $_SESSION['id']);
 
-    mysqli_query($link, $query);
-
-    $result = mysqli_query($link, $query);
-    
-    while ($project = mysqli_fetch_array($result)) {
-        $html .= getProjectHtml ($link, $project, false);
+    if ($projects) {
+        foreach ($projects as $project) {
+            $html .= getProjectHtml ($link, $project, false);
+        }
     }
 
     echo $html;
