@@ -280,7 +280,7 @@ function getProjectTasksHtml ($tasks) {
 
 function getProjectHtml ($link, $project, $empty) {
     // Set timezone to a local client's zone
-    date_default_timezone_set('Europe/Kiev');
+    date_default_timezone_set(TIMEZONE);
     $today = date('d/m/Y');
 
     // Variable $empty is 'true' when a new project is being added
