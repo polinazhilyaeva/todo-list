@@ -1,6 +1,5 @@
 vendor/
 
-includes/config.php
 *.sql
 
 *.log
