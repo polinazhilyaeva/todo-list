@@ -162,13 +162,13 @@ function insertProject ($link, $project) {
 }
 
 function updateTask ($link, $task) {
-    $query = "UPDATE tasks SET name = '" . $task['name'] . "', deadline = '" . $task['deadline'] . "' WHERE id=" . $task['id'];
+    $query = "UPDATE tasks SET name = '" . mysqli_real_escape_string($link, $task['name']) . "', deadline = '" . $task['deadline'] . "' WHERE id=" . $task['id'];
 
     mysqli_query($link, $query);
 }
 
 function updateProject ($link, $project) {
-    $query = "UPDATE projects SET name = '" . $project['name'] . "' WHERE id=" . $project['id'];
+    $query = "UPDATE projects SET name = '" . mysqli_real_escape_string($link, $project['name']) . "' WHERE id=" . $project['id'];
 
     mysqli_query($link, $query);
 }
