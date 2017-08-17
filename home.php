@@ -1,13 +1,6 @@
 <?php
 
-include_once 'includes/functions.php';
-
-session_start();
-
-if(!isLoggedIn()) {
-    header('Location: /login.php');
-    die;
-}
+include_once 'includes/homepage_flow.php';
 
 ?>
 
@@ -59,6 +52,14 @@ if(!isLoggedIn()) {
         <div class="collapse navbar-collapse" id="navbar-primary">
             <ul class="nav navbar-nav navbar-right">
                 <li>
+                    <a>
+                    <?php 
+                        $user = getUserById($link, $_SESSION['id']);
+                        echo $user['name'] . ' ' . $user['last_name'];
+                    ?>
+                    </a>
+                </li>
+                <li>
                     <a href="/login.php?logout=1">
                         <i class="material-icons">exit_to_app</i>
                         Log Out
@@ -77,7 +78,6 @@ if(!isLoggedIn()) {
                     <div id="projects-list">
                         <!-- Get all projects and tasks of logged in user from database and render them from the server -->
                         <?php 
-                            $link = connectToDb();
                             renderCurrentUserProjects($link); 
                         ?>
                     </div>

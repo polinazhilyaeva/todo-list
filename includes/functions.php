@@ -137,6 +137,15 @@ function searchUserByEmail ($link, $email) {
     return $results_number;
 }
 
+function getUserById ($link, $id) {
+    $query = "SELECT * FROM users WHERE id = '" . mysqli_real_escape_string($link, $id) . "'";
+    $result = mysqli_query($link, $query);
+    
+    $row = mysqli_fetch_array($result);
+
+    return $row;
+}
+
 function insertUser ($link, $user) {
     $query = "INSERT INTO users (name, last_name, email, password) VALUES ('" . mysqli_real_escape_string($link, $user['name']) . "', '" . mysqli_real_escape_string($link, $user['lastname']) . "', '" . mysqli_real_escape_string($link, $user['email']) . "', '" . md5(md5($user['email']) . $user['password']) . "')";
 
