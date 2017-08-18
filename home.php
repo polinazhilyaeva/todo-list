@@ -108,7 +108,7 @@ include_once 'includes/homepage_flow.php';
                 <form class="newProjectForm">
                     <input type="text" class="form-control" id="newProjectName" placeholder="Name your new project">
                     <div class=" text-center">
-                        <button class="btn btn-info btn-round add-project">
+                        <button class="btn btn-success btn-round add-project">
                             <i class="material-icons">add</i> Add ToDo List
                         </button>
                     </div>
