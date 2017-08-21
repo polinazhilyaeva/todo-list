@@ -1,0 +1,64 @@
+1. get all statuses, not repeating, alphabetically ordered
+
+SELECT DISTINCT status 
+FROM tasks 
+ORDER BY status
+
+2. get the count of all tasks in each project, order by tasks count descending
+
+SELECT p.*, COUNT(t.id) as number_of_tasks 
+FROM projects p LEFT JOIN tasks t ON p.id = t.project_id 
+GROUP BY p.id 
+ORDER BY number_of_tasks DESC
+
+3. get the count of all tasks in each project, order by projects names
+
+SELECT p.*, COUNT(t.id) as number_of_tasks 
+FROM projects p LEFT JOIN tasks t ON p.id = t.project_id 
+GROUP BY p.id 
+ORDER BY p.name
+ 
+4. get the tasks for all projects having the name beginning with “N” letter
+
+- for tasks with the name beginning with "N"
+SELECT * FROM tasks 
+WHERE name LIKE BINARY "N%" 
+
+- for projects with the name beginning with "N"
+SELECT t.* 
+FROM tasks t JOIN projects p ON p.id = t.project_id 
+WHERE p.name LIKE BINARY "N%" 
+ 
+5. get the list of all projects containing the ‘a’ letter in the middle of the name, and show the tasks count near each project. Mention that there can exist projects without tasks and tasks with project_id=NULL 
+
+SELECT p.*, COUNT(t.id) as tasks_number 
+FROM projects p LEFT JOIN tasks t ON p.id = t.project_id 
+WHERE p.name LIKE BINARY '%a%' 
+AND p.name NOT LIKE BINARY 'a%' 
+AND p.name NOT LIKE BINARY '%a' 
+GROUP BY p.id
+
+6. get the list of tasks with duplicate names. Order alphabetically
+
+SELECT * FROM tasks 
+GROUP BY name 
+HAVING COUNT(*) > 1 
+ORDER BY name
+ 
+7. get the list of tasks having several exact matches of both name and status, from the project ‘Garage’. Order by matches count 
+
+SELECT t.* 
+FROM projects p JOIN tasks t ON p.id = t.project_id 
+WHERE p.name = 'Garage' 
+GROUP BY t.name, t.status 
+HAVING COUNT(*) > 1 
+ORDER BY COUNT(*)
+
+8. get the list of project names having more than 10 tasks in status ‘completed’. Order by project_id
+
+SELECT p.name 
+FROM projects p JOIN tasks t ON p.id = t.project_id 
+WHERE t.status = 'completed' 
+GROUP BY p.name 
+HAVING COUNT(*) > 10 
+ORDER BY p.id
