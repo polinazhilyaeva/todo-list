@@ -31,7 +31,7 @@ function TodoApp () {
 
     /* Sends an array with elements order received 
      * from JQuery 'sortable' plugin to a server */
-    function savePriority (argument) {
+    function savePriority () {
         var priority= $(this).sortable('serialize');
 
         $.post('includes/save_priority.php', priority);
@@ -84,6 +84,63 @@ function TodoApp () {
         $.post('includes/update_checked.php', postData);
     }
 
+<<<<<<< HEAD
+=======
+    /* Sends an array with elements order received 
+     * from JQuery 'sortable' plugin to a server */
+    function savePriority () {
+        var priority= $(this).sortable('serialize');
+
+        $.post('includes/save_priority.php', priority);
+    }
+
+    /* Removes a task DOM object and sends an AJAX request to a server 
+     * to delete a task from a database */
+    function deleteTask (event) {
+        var clickedElement = $(event.currentTarget),
+            taskLi, taskId, postData;
+
+        taskLi = clickedElement.closest('.task');
+        // get task id from an 'id' attribute written as 'task-123'
+        taskId = taskLi.prop('id').split("-")[1];
+
+        postData = {
+            task_id: taskId
+        }
+
+        taskLi.fadeOut(300, function() {
+            taskLi.remove();
+        });
+
+        $.post('includes/delete_task.php', postData);    
+
+        return false;
+    }
+
+    /* Removes a project DOM object and sends an AJAX request to a server 
+     * to delete a project from a database */
+    function deleteProject (event) {
+        var clickedElement = $(event.currentTarget),
+            projectContainer, projectId, postData;
+
+        projectContainer = clickedElement.closest('.project-container');
+        // get project id from an 'id' attribute written as 'project-123'
+        projectId = projectContainer.prop('id').split("-")[1];
+
+        postData = {
+            project_id: projectId
+        }
+
+        projectContainer.fadeOut(300, function() {
+            projectContainer.remove();
+        });
+
+        $.post('includes/delete_project.php', postData);    
+
+        return false;
+    }
+
+>>>>>>> 6f86f20c253c61dfade18a038f47cee666f340ff
     /* Appends a new task DOM object to an appropriate project container
      * and sends an AJAX request to a server to insert new task to a database */
     function addTask (event) {
