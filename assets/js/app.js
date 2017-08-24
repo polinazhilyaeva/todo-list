@@ -84,8 +84,6 @@ function TodoApp () {
         $.post('includes/update_checked.php', postData);
     }
 
-<<<<<<< HEAD
-=======
     /* Sends an array with elements order received 
      * from JQuery 'sortable' plugin to a server */
     function savePriority () {
@@ -140,7 +138,6 @@ function TodoApp () {
         return false;
     }
 
->>>>>>> 6f86f20c253c61dfade18a038f47cee666f340ff
     /* Appends a new task DOM object to an appropriate project container
      * and sends an AJAX request to a server to insert new task to a database */
     function addTask (event) {
