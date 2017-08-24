@@ -52,7 +52,7 @@ $(document).ready(function () {
 
     /* Sends an array with elements order received 
      * from JQuery 'sortable' plugin to a server */
-    function savePriority (argument) {
+    function savePriority () {
         var priority= $(this).sortable('serialize');
 
         $.post('includes/save_priority.php', priority);
