@@ -76,7 +76,7 @@ include_once 'includes/homepage_flow.php';
             <div class="row">
                 <div class="col-md-8 col-md-offset-2">
                     <div id="projects-list">
-                        <!-- Get all projects and tasks of logged in user from database and render them from the server -->
+                        <!-- Show all projects and tasks of logged in user from database and render them from the server -->
                         <?php 
                             renderCurrentUserProjects($link); 
                         ?>
@@ -98,103 +98,10 @@ include_once 'includes/homepage_flow.php';
         </div>
     </footer>
 </div>
-
-<!-- Modal window for adding a new project -->
-<div class="modal fade" id="newProjectModal" tabindex="-1" role="dialog" aria-hidden="true" style="display: none;">
-  <div class="modal-dialog modal-notice">
-    <div class="modal-content">
-        <div class="modal-body">
-            <div class="form-group">
-                <form class="newProjectForm">
-                    <input type="text" class="form-control" id="newProjectName" placeholder="Name your new project">
-                    <div class=" text-center">
-                        <button class="btn btn-success btn-round add-project">
-                            <i class="material-icons">add</i> Add ToDo List
-                        </button>
-                    </div>
-                </form>
-            </div>
-        </div>
-    </div>
-  </div>
-</div>
-
-<!-- Modal window for editing a task -->
-<div class="modal fade" id="editTaskModal" tabindex="-1" role="dialog" aria-hidden="true" style="display: none;">
-  <div class="modal-dialog modal-notice">
-    <div class="modal-content">
-        <div class="modal-body">
-            <h5 class="text-center">Enter a new name and choose a new deadline for this task</h5>
-            <div class="form-group">
-                <form class="editTaskForm">
-                    <div class="row">
-                        <div class="col-sm-8">
-                            <div class="input-group">
-                                <span class="input-group-addon">
-                                    <i class="material-icons color-green">edit</i>
-                                </span>
-                                <div class="form-group is-empty">
-                                    <input type="text" name="new-task" required id="editTaskName" placeholder="Enter a new name for a task" class="form-control">
-                                    <span class="material-input"></span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-sm-4">
-                            <div class="input-group">
-                                <span class="input-group-addon">
-                                    <i class="material-icons color-green">today</i>
-                                </span>
-                                <div class="form-group label-static">
-                                    <input type="text" name="deadline" id="editTaskDeadline" class="datepicker form-control text-center" data-date-format="dd/mm/yyyy"><span class="material-input"></span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="text-center">
-                            <button class="btn btn-success btn-round">
-                                <i class="material-icons">save</i> Save Changes
-                            </button>
-                        </div>
-                    </div>
-                </form>
-            </div>
-        </div>
-    </div>
-  </div>
-</div>
-
-<!-- Modal window for editing a project -->
-<div class="modal fade" id="editProjectModal" tabindex="-1" role="dialog" aria-hidden="true" style="display: none;">
-  <div class="modal-dialog modal-notice">
-    <div class="modal-content">
-        <div class="modal-body">
-            <h5 class="text-center">Enter a new name for this project</h5>
-            <div class="form-group">
-                <form class="editProjectForm">
-                    <div class="row">
-                        <div class="col-sm-12">
-                            <div class="input-group">
-                                <span class="input-group-addon">
-                                    <i class="material-icons color-green">edit</i>
-                                </span>
-                                <div class="form-group is-empty">
-                                    <input type="text" name="new-task" required id="editProjectName" placeholder="Enter a new name for a project" class="form-control">
-                                    <span class="material-input"></span>
-                                </div>
-                            </div>
-                        </div>
-                        </div>
-                        <div class="text-center">
-                            <button class="btn btn-success btn-round">
-                                <i class="material-icons">save</i> Save Changes
-                            </button>
-                        </div>
-                    </div>
-                </form>
-            </div>
-        </div>
-    </div>
-  </div>
-</div>
+<!-- Render modal windows that are used for editing tasks and projects -->
+<?php 
+    renderModalWindows();
+?>
 </body>
     <!-- Libraries and components -->
     <script src="assets/js/jquery.min.js"></script>

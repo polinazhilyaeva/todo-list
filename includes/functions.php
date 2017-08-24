@@ -323,3 +323,7 @@ function renderCurrentUserProjects ($link) {
 
     echo $html;
 }
+
+function renderModalWindows () {
+    echo ADD_PROJECT_MODAL . EDIT_TASK_MODAL . EDIT_PROJECT_MODAL;
+}
